@@ -18,7 +18,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Map />} />
-        <Route path="/list" element={<list />} />
+        <Route path="/list" element={<List />} />
       </Routes>
       <Modal />
     </BrowserRouter>

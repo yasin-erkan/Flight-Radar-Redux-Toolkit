@@ -38,6 +38,7 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
+  color: white;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -84,6 +85,7 @@ header {
     button {
       width: 90px;
       outline: none;
+      color: white;
     }
   }
 
@@ -100,13 +102,14 @@ header {
 
 /* map */
 .leaflet-container {
-  height: calc(100vh - 76px);
+  height: calc(100vh - 60px);
 }
 
 .popup {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: #fff;
 
   span {
     text-align: center;
@@ -127,7 +130,7 @@ header {
   color: white;
 
   .modal-inner {
-    background: black;
+    background: rgb(97, 38, 38);
     width: 300px;
     height: 90%;
     border-radius: 15px;
@@ -190,7 +193,7 @@ header {
     }
 
     span {
-      background: rgba(145, 145, 145, 0.7);
+      background: rgba(103, 38, 38, 0.7);
       font-size: 13px;
       padding: 3px 6px;
       border-radius: 6px;
@@ -200,6 +203,7 @@ header {
   button {
     background: none;
     font-size: 17px;
+    color: #e6e5e5;
     transition: all 0.3s;
   }
 }
@@ -442,4 +446,83 @@ header {
       }
     }
   }
+}
+
+/* list page */
+.list-wrapper {
+  min-height: calc(100vh - 60px);
+  display: grid;
+  place-items: center;
+  background: #e6e5e5;
+  p {
+    color: #1a1a1a !important;
+  }
+}
+
+.list-container {
+  min-height: calc(100vh - 60px);
+  background: #e6e5e5;
+  padding: 20px;
+}
+
+@media (min-width: 1000px) {
+  .list-container {
+    padding: 40px;
+  }
+}
+.list-container table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.list-container button {
+  border-radius: 10px;
+  font-size: 13px;
+  padding: 5px 10px;
+}
+
+/* pagination */
+@media (max-width: 768px) {
+  .pagination {
+    min-width: unset !important;
+    width: 100%;
+    justify-content: space-between !important;
+  }
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  min-width: 600px;
+  margin: 10px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+
+  li {
+    padding: 10px 15px;
+    background: white;
+  }
+
+  li:first-child,
+  li:last-child {
+    padding: 10px 10px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .selected {
+    background: #535bf2;
+    color: white;
+  }
+}
+
+.error {
+  font-size: 13px;
+  color: rgb(101, 101, 101);
+  text-align: center;
 }

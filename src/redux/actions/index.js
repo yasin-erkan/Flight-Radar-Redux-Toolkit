@@ -2,13 +2,13 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../utils/api";
 
 export const getFlights = createAsyncThunk("flight/getFlights", async () => {
-  // create the parametres for api request
+  // create the parameters for api request
   const params = {
-    bl_lat: "50.0682",
-    bl_lng: "-5.7160",
-    tr_lat: "58.6350",
-    tr_lng: "1.7800",
-    speed: "3",
+    bl_lat: "42.3",
+    bl_lng: "-5.15",
+    tr_lat: "51.0",
+    tr_lng: "8.23",
+    speed: "100",
   };
 
   // api request
@@ -19,6 +19,7 @@ export const getFlights = createAsyncThunk("flight/getFlights", async () => {
     code: i[1],
     lat: i[2],
     lng: i[3],
+
     deg: i[4],
   }));
 

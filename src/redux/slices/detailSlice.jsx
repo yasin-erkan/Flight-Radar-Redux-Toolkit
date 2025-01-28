@@ -44,5 +44,5 @@ const detailSlice = createSlice({
   },
 });
 
-export const { open, close } = detailSlice.actions;
+export const { open, close, clearRoute } = detailSlice.actions;
 export default detailSlice.reducer;

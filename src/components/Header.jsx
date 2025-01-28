@@ -1,5 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const { isLoading, error, flights } = useSelector((store) => store.flight);
@@ -7,24 +7,28 @@ const Header = () => {
   return (
     <header>
       <Link to="/" className="logo">
-        <img src="./logo.webp" alt="logo" width={40} />
+        <img src="/logo.webp" alt="logo" width={40} />
         <h2>Flight Radar</h2>
       </Link>
+
       <div className="buttons">
         <NavLink to="/">
           <button>Map</button>
         </NavLink>
-        <NavLink to="/">
+        <NavLink to="/list">
           <button>List</button>
         </NavLink>
-        <h3>
-          {isLoading
-            ? "Flights are on progress!"
-            : error
-            ? error
-            : `${flights.length} flights found`}
-        </h3>
       </div>
+
+      <h3>
+        {isLoading ? (
+          "Searching for flights..."
+        ) : error ? (
+          <p className="error">{error}</p>
+        ) : (
+          `${flights.length} Flights Found`
+        )}
+      </h3>
     </header>
   );
 };
